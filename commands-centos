@@ -42,7 +42,10 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
        https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOM
 
-yum install google-cloud-sdk
+sudo yum update -y
+sudo yum -y install google-cloud-sdk
+
+
 
 
  gcloud init
