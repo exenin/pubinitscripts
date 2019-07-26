@@ -50,3 +50,18 @@ sudo yum -y install google-cloud-sdk
 
  gcloud init
  gcloud auth configure-docker
+
+
+
+ mkdir buildplace
+ cd buildplace
+
+ sudo yum install wget
+ wget http://mirror.mojohost.com/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-Everything-1810.iso
+
+rpm -i --root=/var/tmp/chroot --nodeps
+yum --installroot=/var/tmp/chroot install -y rpm-build yum
+
+echo 'check your new CHROOT environment'
+echo 'chroot /var/tmp/chroot'
+
