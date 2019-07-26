@@ -1,0 +1,47 @@
+sudo su -
+mkdir -p /home/builder/
+sudo apt install debootstrap
+
+# DOCKER
+#
+sudo apt-get update
+sudo apt-get install \
+     apt-transport-https \
+          ca-certificates \
+               curl \
+                    gnupg2 \
+                         software-properties-common
+
+
+curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+
+ sudo add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \
+       $(lsb_release -cs) \
+          stable"
+
+sudo apt-get update
+sudo apt-get install docker-ce
+
+
+###------
+
+distro_codename=$(lsb_release -cs)
+sudo debootstrap $distro_codename $distro_codename > /dev/null
+sudo tar -C $distro_codename -c . | docker import - $distro_codename
+
+docker import $distro_codename
+
+
+# Add the Cloud SDK distribution URI as a package source
+ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+#
+# # Import the Google Cloud Platform public key
+ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+#
+# # Update the package list and install the Cloud SDK
+ sudo apt-get update && sudo apt-get install google-cloud-sdk
+
+ gcloud init
+ gcloud auth configure-docker
