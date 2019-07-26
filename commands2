@@ -1,0 +1,8 @@
+
+distro_codename=$(lsb_release -cs)
+#sudo debootstrap $distro_codename $distro_codename > /dev/null
+sudo tar -C $distro_codename -c . | docker import - $distro_codename
+
+
+
+
