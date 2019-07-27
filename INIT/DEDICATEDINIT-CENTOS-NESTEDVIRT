@@ -26,3 +26,11 @@ sudo systemctl start docker
 
 
 # SPIN UP VIRTUAL MACHINES TO KUBE SPRAY 
+
+WD="/home/godmode"
+cd $WD
+
+git clone https://github.com/kubernetes-sigs/kubespray.git $WD/kubespray
+
+
+
