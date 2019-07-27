@@ -1,0 +1,22 @@
+#!/bin/bash
+
+
+sudo su  -
+
+#  CENTOS BOX
+# UPDATE && UPGRADE
+sudo yum update && sudo yum upgrade
+
+sudo yum -y install epel-release
+sudo yum -y install libvirt qemu-kvm virt-install virt-top libguestfs-tools bridge-utils
+
+
+sudo lsmod | grep kvm
+#kvm_intel 147785 0
+#kvm 464964 1 kvm_intel
+
+
+# INSTALL DOCKER & KVM & QEMU
+
+
+# SPIN UP VIRTUAL MACHINES TO KUBE SPRAY 
