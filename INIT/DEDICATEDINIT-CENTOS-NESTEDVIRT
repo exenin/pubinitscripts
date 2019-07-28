@@ -71,12 +71,12 @@ sudo systemctl start libvirtd
 
 # WE WANT THIS TO BE SET TO LIBVIRTD
 VAGRANT_DEFAULT_PROVIDER="libvirt"
-sudo yum install python36-devel python-devel
-sudo yum install python36-pip.noarch python-pip
+sudo yum -y install python36-devel python-devel
+sudo yum -y install python36-pip.noarch python-pip
 
 pip3 install -r kayspray/requirements.txt
 
-cp init/patches/nested-virt-patch.dff kayspray/diff
+#cp init/patches/nested-virt-patch.dff kayspray/diff
 cd kayspray && git apply 
 
 vagrant up 
