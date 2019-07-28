@@ -32,7 +32,8 @@ git clone https://github.com/kubernetes-sigs/kubespray.git
 
 
 # https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.rpm
-curl https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.rpm | sudo rpm -iU
+curl https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.rpm  > vagrant.rpm
+sudo rpm -iU vagrant.rpm
 # need for vagrant kvm
 # Ruby 2.3 >  & nokogiri
 
@@ -45,7 +46,7 @@ curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
 
 curl -L get.rvm.io | bash -s stable
 
-#source /etc/profile.d/rvm.sh
+source /etc/profile.d/rvm.sh
 rvm reload
 
 rvm install 2.6
