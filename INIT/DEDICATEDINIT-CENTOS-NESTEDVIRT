@@ -28,7 +28,7 @@ sudo systemctl start docker
 
 
 # SPIN UP VIRTUAL MACHINES TO KUBE SPRAY 
-git clone https://github.com/kubernetes-sigs/kubespray.git 
+git clone https://github.com/kubernetes-sigs/kubespray.git kayspray
 
 
 # https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.rpm
@@ -37,7 +37,7 @@ sudo rpm -iU vagrant.rpm
 # need for vagrant kvm
 # Ruby 2.3 >  & nokogiri
 
-sudo yum install gcc-c++ patch readline readline-devel zlib zlib-devel \
+sudo yum -y install gcc-c++ patch readline readline-devel zlib zlib-devel \
 	   libyaml-devel libffi-devel openssl-devel make \
 	      bzip2 autoconf automake libtool bison iconv-devel sqlite-devel
 
@@ -71,3 +71,7 @@ sudo systemctl start libvirtd
 
 # WE WANT THIS TO BE SET TO LIBVIRTD
 VAGRANT_DEFAULT_PROVIDER="libvirt"
+sudo yum install python36-devel python-devel
+sudo yum install python36-pip.noarch python-pip
+cd 
+pip install -r kayspray/requirements.txt
