@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python -c "import platform;print(platform.platform())"
+python3 -c "import platform;print(platform.platform())"
 
 whatweant="tcpdump"
 pm=""
