@@ -1,10 +1,10 @@
 #!/bin/bash
 
-whatweant="tcpdump"
+whatwewant="tcpdump"
 pm=""
 
-yum='yum install -y ' 
-apt='apt install -y '
+yum=' install -y ' 
+apt=' install -y '
 
 #https://unix.stackexchange.com/questions/6345/how-can-i-get-distribution-name-and-version-number-in-a-simple-shell-script
 function os_type
@@ -28,4 +28,4 @@ esac
 
 
 
-$(os_type) $whatwewant
+$(os_type) $whatwewant 
