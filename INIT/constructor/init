@@ -1,20 +1,14 @@
 #!/bin/bash
 
-whatwewant="tcpdump"
-pm=""
-
-yum=' install -y ' 
-apt=' install -y '
-
 #https://unix.stackexchange.com/questions/6345/how-can-i-get-distribution-name-and-version-number-in-a-simple-shell-script
 function os_type
 {
 case `uname` in
   Linux )
      LINUX=1
-     which yum && { echo $yum; return; }
-     which zypper && { echo opensuse; return; }
-     which apt-get && { echo $apt; return; }
+     which yum && { sudo yum install -y  tcpdump;  }
+     which zypper && { echo opensuse; }
+     which apt-get && { sudo apt install -y tcpdump; }
      ;;
   Darwin )
      DARWIN=1
@@ -27,5 +21,4 @@ esac
 }  
 
 
-
-$(os_type) $whatwewant 
+os_type
