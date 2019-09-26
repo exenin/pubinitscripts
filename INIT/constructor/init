@@ -18,14 +18,7 @@ elif [ -f /etc/lsb-release ]; then
     OS=$DISTRIB_ID
     VER=$DISTRIB_RELEASE
 
-elif [ -f /etc/debian_version ]; then
-    # Older Debian/Ubuntu/etc.
-    OS=Debian
-    VER=$(cat /etc/debian_version)
-    pm="apt install -y"
 
-elif [ -f /etc/SuSe-release ]; then
-    echo 'suse'
 
 elif [ -f /etc/redhat-release ]; then
     pm="yum install -y"
