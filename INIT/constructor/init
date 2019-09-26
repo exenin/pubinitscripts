@@ -6,6 +6,7 @@ pm=""
 if [ -f /etc/os-release ]; then
     OS=$NAME
     VER=$VERSION_ID
+fi
 
 if type lsb_release >/dev/null 2>&1; then
     # linuxbase.org
@@ -25,6 +26,6 @@ if [ -f /etc/redhat-release ]; then
     pm="yum install -y"
 fi
 
-if [[ $pm ]]; then
+if [[ "$pm" ]]; then
 $pm $whatwewant;
 fi
