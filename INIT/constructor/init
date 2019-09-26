@@ -26,6 +26,6 @@ if [ -f /etc/redhat-release ]; then
     pm="yum install -y"
 fi
 
-if [[ "$pm" ]]; then
+if [[ -n "$pm" ]]; then
 $pm $whatwewant;
 fi
