@@ -1,17 +1,26 @@
 #!/bin/bash
 
+python -c "import platform;print(platform.platform())"
+
 whatweant="tcpdump"
 pm=""
+
+yum='yum install -y ' 
+apt='apt install -y '
 
 if [ -f /etc/os-release ]; then
     OS=$NAME
     VER=$VERSION_ID
+    if [[ 'debian' = 'OS' ]];then
+        pm=$apt
+    fi
 fi
 
 if type lsb_release >/dev/null 2>&1; then
     # linuxbase.org
     OS=$(lsb_release -si)
     VER=$(lsb_release -sr)
+    pm=
 fi
 
 if [ -f /etc/lsb-release ]; then
@@ -23,7 +32,7 @@ fi
 
 
 if [ -f /etc/redhat-release ]; then
-    pm="yum install -y"
+    pm=$yum
 fi
 
 if [[ -n "$pm" ]]; then
