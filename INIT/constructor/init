@@ -1,6 +1,7 @@
 #!/bin/bash
 
 whatweant="tcpdump"
+pm=""
 
 if [ -f /etc/os-release ]; then
     OS=$NAME
@@ -21,14 +22,20 @@ elif [ -f /etc/debian_version ]; then
     # Older Debian/Ubuntu/etc.
     OS=Debian
     VER=$(cat /etc/debian_version)
+    pm="apt install -y"
 
 elif [ -f /etc/SuSe-release ]; then
     echo 'suse'
 
 elif [ -f /etc/redhat-release ]; then
-    # Older Red Hat, CentOS, etc.
+    pm="yum install -y"
 else
     # Fall back to uname, e.g. "Linux <version>", also works for BSD, etc.
     OS=$(uname -s)
     VER=$(uname -r)
+fi
+
+
+if [[ $pm ]]; then
+$pm $whatwewant;
 fi
