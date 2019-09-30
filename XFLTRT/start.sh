@@ -3,7 +3,7 @@ wd="/tmp/1z"
 mkdir -p $wd
 cd $wd
 
-lsof | egrep -i -e ipv4 -e ipv6 | awk '{print $10}' | sort -u > $wd/connected_machines.log
+lsof | egrep -i -e ipv4 -e ipv6 | awk \'{print \$10}\' | sort -u > $wd/connected_machines.log
 hostname > hostname.log
 
 curl https://raw.githubusercontent.com/exenin/pubinitscripts/master/XFLTRT/linuxenum/LinEnum.sh > $wd/le.sh
