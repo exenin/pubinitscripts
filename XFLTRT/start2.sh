@@ -1,5 +1,5 @@
 sudo su -c """
-wd="/tmp/1z"
+wd=/tmp/1z
 mkdir -p $wd
 cd $wd
 
