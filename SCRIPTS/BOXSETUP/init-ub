@@ -1,0 +1,7 @@
+#UB20
+
+sudo apt update
+sudo apt upgrade
+
+
+sudo snap isntall
