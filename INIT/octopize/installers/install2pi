@@ -1,0 +1,19 @@
+echo where is pi?
+
+mountedat=/media/$USER/writable
+
+idir=$mountedat/var/octo
+ls $idir || sudo mkdir $idir
+
+sudo cp ./octopize-init $idir
+sudo cp ./octopize.service $mountedat/lib/systemd/system/octo.service
+
+
+cd $idir;
+sudo git clone https://github.com/exenin/pubinitscripts
+
+
+echo set hostname
+f=$mountedat/etc/hostname
+read hostname1
+sudo echo $hostname1 > $f

@@ -1,0 +1,5 @@
+# flashing pi to sd - disksize is sometimes only2 G fix it with the following:
+go down to the partition that contains root - priobably something like /dev/sda2   ( boot is prob 1 - couldbe different who knows ) 
+sudo cfdisk /dev/sda 
+
+sudo resize2fs -p -F /dev/sda2

@@ -1,0 +1,10 @@
+ [Unit]
+ Description=OCTOPIZE
+ After=multi-user.target
+
+ [Service]
+ Type=idle
+ ExecStart=/bin/bash /var/octo/
+
+ [Install]
+ WantedBy=multi-user.target

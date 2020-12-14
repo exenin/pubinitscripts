@@ -9,3 +9,5 @@ sudo apt install snapd -y && sudo reboot
 
 snap install microk8s
 microk8s start
+
+

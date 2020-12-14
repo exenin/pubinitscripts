@@ -1,1 +1,0 @@
-@reboot wget https://raw.githubusercontent.com/exenin/pubinitscripts/master/INIT/octopize/octopize_init.sh | bash - && echo "$(date) success" > /var/log/oct-cron.log

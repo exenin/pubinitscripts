@@ -1,0 +1,5 @@
+# PASS FILES TO MOVE TO PI
+
+f=$1
+mkdir /media/$USER/writable/var/octo
+sudo cp $f /media/zn1/writable/var/octo
