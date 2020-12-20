@@ -1,0 +1,53 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+  namespace: bzrcms-development
+  labels:
+    app: development-db-db
+  annotations:
+    "sidecar.jaegertracing.io/inject": "true"
+spec:
+  selector:
+    matchLabels:
+      app: development-db-db
+ 
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+         app: development-db-db
+    spec:
+      securityContext:
+        fsGroup: 1000
+      containers:
+      - envFrom:
+        - configMapRef:
+            name: development-app-cm
+#        - configMapRef:
+#            name: confs
+        - secretRef:
+            name: databases
+        name: db
+        image: mysql
+        ports:
+        - containerPort: 3306
+
+        volumeMounts:
+        - name: db
+          mountPath: /var/lib/mysql/
+
+      restartPolicy: Always
+ 
+
+      volumes:
+
+        - name: db
+          persistentVolumeClaim:
+            claimName: bzrcms-development-db-pvc
+
+
+

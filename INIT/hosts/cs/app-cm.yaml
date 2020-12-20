@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: development-app-cm
+  namespace: bzrcms-development
+  
+data:
+  "ADSERVER": "http://nginx-svc-admin/ad/serv"
+  "AWS_ACCESS_KEY_ID": "AKIAX3TPWJOU57MQLAXE"
+  "AWS_SECRET_ACCESS_KEY": "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"
+  "DB_HOST": "appdb"
+  "DB_PORT": "3306"
+  "DEBUG": "False"
+  "GA_KEY_FILEPATH": "/code/configs/wagalytics_gcp.json"
+  "GA_VIEW_ID": "ga:202155945"
+  "STORAGE_BUCKET_NAME": "blogworldz"
+  "URLCRYPT_PRIVATE_KEY_PATH": "/code/configs/sshkey"
+
+     

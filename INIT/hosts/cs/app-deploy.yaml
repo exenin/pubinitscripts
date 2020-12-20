@@ -1,0 +1,51 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: development-cloudstack
+  name: development-cloudstack
+  namespace: bzrcms-development
+  annotations:
+    "sidecar.jaegertracing.io/inject": "true"
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: development-cloudstack
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: development-cloudstack
+    spec:
+      containers:
+      - envFrom:
+        - configMapRef:
+            name: development-app-cm
+        - secretRef:
+            name: databases
+        - secretRef:
+            name: application
+        env:
+
+        - name: MYSQL_DATABASE
+          value: cloudstack
+
+          
+        image: cloudstack/management_centos6:latest
+        imagePullPolicy: Always
+        name: development-cloudstack
+        args:
+        - entrypoint.sh
+
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext:
+        fsGroup: 1000
+      terminationGracePeriodSeconds: 30
+
