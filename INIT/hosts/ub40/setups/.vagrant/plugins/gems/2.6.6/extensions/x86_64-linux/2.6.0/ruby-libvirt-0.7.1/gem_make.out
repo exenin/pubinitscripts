@@ -1,0 +1,33 @@
+current directory: /home/zn1/WS/CODE/bazaarlevel/pubinitscripts/INIT/hosts/ub40/setups/.vagrant/plugins/gems/2.6.6/gems/ruby-libvirt-0.7.1/ext/libvirt
+/opt/vagrant/embedded/bin/ruby -I /opt/vagrant/embedded/lib/ruby/2.6.0 -r ./siteconf20201220-73691-zpjk2k.rb extconf.rb
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/opt/vagrant/embedded/bin/$(RUBY_BASE_NAME)
+	--with-libvirt-include
+	--without-libvirt-include
+	--with-libvirt-lib
+	--without-libvirt-lib
+	--with-libvirt-config
+	--without-libvirt-config
+	--with-pkg-config
+	--without-pkg-config
+extconf.rb:73:in `<main>': libvirt library not found in default locations (RuntimeError)
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/zn1/WS/CODE/bazaarlevel/pubinitscripts/INIT/hosts/ub40/setups/.vagrant/plugins/gems/2.6.6/extensions/x86_64-linux/2.6.0/ruby-libvirt-0.7.1/mkmf.log
+
+extconf failed, exit code 1

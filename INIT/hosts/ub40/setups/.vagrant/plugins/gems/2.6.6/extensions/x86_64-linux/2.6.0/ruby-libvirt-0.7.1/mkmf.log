@@ -1,0 +1,2 @@
+"pkg-config --exists libvirt"
+package configuration for libvirt is not found

@@ -1,0 +1,19 @@
+CentOS / RHEL: 6.3
+Ubuntu: 12.04(.1)
+The main requirement for KVM hypervisors is the libvirt and Qemu version. No matter what Linux distribution you are using, make sure the following requirements are met:
+
+libvirt: 0.9.4 or higher
+Qemu/KVM: 1.0 or higher
+The default bridge in CloudStack is the Linux native bridge implementation (bridge module). CloudStack includes an option to work with OpenVswitch, the requirements are listed below
+
+libvirt: 0.9.11 or higher
+openvswitch: 1.7.1 or higher
+In addition, the following hardware requirements apply:
+
+Within a single cluster, the hosts must be of the same distribution version.
+All hosts within a cluster must be homogenous. The CPUs must be of the same type, count, and feature flags.
+Must support HVM (Intel-VT or AMD-V enabled)
+64-bit x86 CPU (more cores results in better performance)
+4 GB of memory
+At least 1 NIC
+When you deploy CloudStack, the hypervisor host must not have any VMs already running
