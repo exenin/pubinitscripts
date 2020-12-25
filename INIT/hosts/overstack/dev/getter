@@ -1,0 +1,20 @@
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install git
+
+sudo git clone \
+https://github.com/openstack-dev/devstack.git \
+/opt/devstack/
+
+
+cd /opt/devstack/
+sudo \
+chmod u+x tools/create-stack-user.sh
+sudo \
+tools/create-stack-user.sh
+
+sudo \
+chown -R stack:stack /opt/devstack/
+
+sudo \
+-i -u stack
