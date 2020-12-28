@@ -3,8 +3,8 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   creationTimestamp: null
-  name: bzrcms-development-db-pvc
-  namespace: bzrcms-development
+  name: cloudstack-db-pvc
+  namespace: cloudstack
   
 spec:
   accessModes:

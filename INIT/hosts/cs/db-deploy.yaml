@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: db
-  namespace: bzrcms-development
+  namespace: cloudstack
   labels:
     app: development-db-db
   annotations:
@@ -47,7 +47,7 @@ spec:
 
         - name: db
           persistentVolumeClaim:
-            claimName: bzrcms-development-db-pvc
+            claimName: cloudstack-db-pvc
 
 
 

@@ -3,7 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: development-app-cm
-  namespace: bzrcms-development
+  namespace: cloudstack
   
 data:
   "ADSERVER": "http://nginx-svc-admin/ad/serv"

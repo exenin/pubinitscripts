@@ -5,7 +5,7 @@ metadata:
   labels:
     name: development-cloudstack
   name: development-cloudstack
-  namespace: bzrcms-development
+  namespace: cloudstack
   annotations:
     "sidecar.jaegertracing.io/inject": "true"
 spec:
@@ -26,10 +26,6 @@ spec:
       - envFrom:
         - configMapRef:
             name: development-app-cm
-        - secretRef:
-            name: databases
-        - secretRef:
-            name: application
         env:
 
         - name: MYSQL_DATABASE
