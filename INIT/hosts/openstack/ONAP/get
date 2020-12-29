@@ -1,0 +1,16 @@
+#https://docs.onap.org/en/dublin/submodules/oom.git/docs/oom_user_guide.html#install-the-helm-repo
+
+git clone  git clone -b casablanca http://gerrit.onap.org/r/oom
+cd oom/kubernetes
+
+helm init
+helm serve &
+
+
+helm repo add local http://127.0.0.1:8879
+helm repo list
+
+make all
+helm search -l
+
+cp -R helm/plugins/ ~/.helm
