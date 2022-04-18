@@ -1,9 +1,8 @@
 
-for i in """
-https://github.com/DefectDojo/django-DefectDojo.git
+domains="""https://github.com/DefectDojo/django-DefectDojo.git
 https://github.com/Patrowl/PatrowlManager.git
-https://github.com/Patrowl/PatrowlEngines.git
-https://github.com/Patrowl/PatrowlHears.git
+https://github.com/Patrowl/PatrowlEngines.git 
+https://github.com/Patrowl/PatrowlHears.git"""
 
-"""; do
+for i in $domains;do
 git clone $i; done
