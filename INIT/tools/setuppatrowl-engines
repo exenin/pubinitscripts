@@ -1,0 +1,3 @@
+cd PatrowlEngines
+bash scripts/build-docker-engines.sh
+bash scripts/start-docker-engines.sh
