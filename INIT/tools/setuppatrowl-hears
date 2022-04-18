@@ -1,5 +1,5 @@
 cd PatrowlHears
-docker-compose -d up 
+docker-compose  up 
 
 docker-compose exec patrowlhears bash -c 'cd backend_app && ./load_init_data.sh' 
 docker-compose exec patrowlhears bash -c 'cd backend_app && ./import_data_updates.sh'
