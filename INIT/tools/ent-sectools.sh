@@ -1,3 +1,7 @@
+bash docker
+bash compose
+
+apt install -y git tmux
 
 domains="""https://github.com/DefectDojo/django-DefectDojo.git
 https://github.com/Patrowl/PatrowlManager.git
