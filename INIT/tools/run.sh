@@ -1,5 +1,5 @@
 bash ent-sectools.sh
 
-bash setuppatrowl-manager &
-bash setuppatrowl-hears &
-bash setuppatrowl-engines &
+tmux new-session -d -s $s "bash setuppatrowl-manager &"
+tmux new-session -d -s $s "bash setuppatrowl-hears &"
+tmux new-session -d -s $s "bash setuppatrowl-engines &"
